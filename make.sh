@@ -9,7 +9,7 @@ echo "INSTALLDIR: $INSTALLDIR"
 ARDUINO_HOME='C:/Program Files (x86)/Arduino'
 echo "ARDUINO_HOME: $ARDUINO_HOME"
 #location of Jar file containing tool source code
-TOOL_SOURCE_LOC='C:/Users/jsmit/Documents/GitHub/Arduino_Arduino_Class_Maker/src/cc/arduinoclassmaker.jar'
+TOOL_SOURCE_LOC='C:/Users/jsmit/Documents/GitHub/EmbeddedHelperSourceCode/src/cc/arduinoclassmaker.jar'
 #echo "TOOLSOURCELOCATION: $TOOL_SOURCE_LOC"
 #Define Name of Main Class and Jar name
 PROJECT=EmbeddedHelper
