@@ -54,9 +54,9 @@
 
 # Demonstration
 
-  Go to tools menu and select Generate Class, using this Morse file in examples folder
+  Go to tools menu and select Generate Class, using [this Morse file](https://github.com/jsmith2021Brandeis/EmbeddedHelperBetaTest/blob/master/examples/Morse/Morse.ino) in examples folder
 
-![Image of Morse Example file](C:\Users\jsmit\Documents\ArduinoSketches\EmbeddedHelper\images\Morse.PNG)
+![Image of Morse Example file](images/Morse.PNG)
 
 
 
