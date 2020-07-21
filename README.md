@@ -4,6 +4,19 @@
  
 
 ## Installation
+
+### Step 0:
+
+If you haven't already, download the [Arduino IDE](https://www.arduino.cc/en/main/software)
+
+
+![alt text](https://user-images.githubusercontent.com/62360986/86273966-fce03380-bb9e-11ea-9cb2-e6c6a19c102d.png)
+
+Then download both the "EmbeddedHelper.jar" and "arduinoclassmaker.jar" files
+
+
+![alt text](https://user-images.githubusercontent.com/62360986/87077916-d7cc7000-c1f1-11ea-8a92-d4e20446caa8.png)
+
 ### Step 1:
 
 Click on "Initial Demo Release"
