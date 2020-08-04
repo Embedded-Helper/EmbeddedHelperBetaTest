@@ -1,4 +1,4 @@
-# Embedded Helper Extension
+# Embedded elper Extension
 
  Demonstrates Creation of Arduino Tool to Automatically Generate Classes
 
