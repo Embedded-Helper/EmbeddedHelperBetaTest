@@ -1,101 +1,15 @@
-# Embedded Helper Extension
- Demonstrates Creation of Arduino Tool to Automatically Generate Classes
-
- 
-
-## Installation
-
-### Step 0:
-
-If you haven't already, download the [Arduino IDE](https://www.arduino.cc/en/main/software)
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86273966-fce03380-bb9e-11ea-9cb2-e6c6a19c102d.png)
-
-Then download both the "EmbeddedHelper.jar" and "arduinoclassmaker.jar" files
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/87077916-d7cc7000-c1f1-11ea-8a92-d4e20446caa8.png)
-
-### Step 1:
-
-Click on "Initial Demo Release"
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86273966-fce03380-bb9e-11ea-9cb2-e6c6a19c102d.png)
-
-Then download both the "EmbeddedHelper.jar" and "arduinoclassmaker.jar" files
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/87077916-d7cc7000-c1f1-11ea-8a92-d4e20446caa8.png)
-
-### Step 2:
-
-Next, open file manager and go inside your "Arduino" folder
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86293835-68d39380-bbc1-11ea-88bc-e69fb65d66ba.png)
-
-Create a new folder called "tools" (no capitalizations)
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86294054-cf58b180-bbc1-11ea-8c66-cef0aa13b45c.png)
-
-Inside the newly created "tools" folder, create a new folder called "EmbeddedHelper" which those exact capitalizations
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86294225-23639600-bbc2-11ea-86fd-4da5080e9b8c.png)
-
-Inside this newly created "EmbeddedHelper" folder, create a new folder called "tool" no caps
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86294361-6160ba00-bbc2-11ea-9daf-a0b2acf69e0b.png)
-
-#### Step 3:
-
-Copy your recently downloaded "EmbeddedHelper.jar" and "arduinoclassmaker.jar" files and paste them inside the "tool" folder
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/87078740-17e02280-c1f3-11ea-8e6d-4cf79c76909b.png)
-
-
-Now when you open Arduino, under the tools menu, there will be a "Generate class" option
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86294573-cc11f580-bbc2-11ea-9c97-5052c4a777ae.png)
-
-
-## Demonstration
-
-  Go to tools menu and select Generate Class, using [this Morse file](https://github.com/jsmith2021Brandeis/EmbeddedHelperBetaTest/blob/master/examples/Morse/Morse.ino) in examples folder
-
-![Image of Morse Example file](images/Morse.PNG)
-
-Select Tools --> Generate Class, and select a folder location in your libraries directory so the class will compile
-
-​	You will receive something like the following message
-
-​	![Output of Morse example](images/MorseOutput.PNG)
-
-You can go to that location to view the generated classes!
-
-## **Feedback Form**
-
-Please fill out this [feedback form](https://forms.gle/ZGoVuzwSiFXrtqiPA) with your opinion of the software
-
 Test of README
 
-#  &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Try%20out%20the%20new%20Arduino%20Library%20Extension%20for%20the%20Arduino%20IDE%20by%20Embedded Helper&url=https://embeddedhelper.com/&hashtags=automation,InternetOfThings) 
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Try%20out%20the%20new%20Arduino%20Library%20Extension%20for%20the%20Arduino%20IDE%20by%20Embedded%20Helper&url=https://embeddedhelper.com/&hashtags=automation,InternetOfThings)
 
-# &nbsp;[![Slack](https://froala-design-blocks-slack.herokuapp.com/badge.svg)](https://join.slack.com/t/embeddedhelper/shared_invite/zt-g8vjxeti-TmMyLruscyZziFPmT9DzJw)
+# &nbsp;[![Slack](https://img.shields.io/badge/Slack-2-lightgrey)](https://join.slack.com/t/embeddedhelper/shared_invite/zt-g8vjxeti-TmMyLruscyZziFPmT9DzJw)
 
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/froala/design-blocks/blob/master/LICENSE)
-[![GitHub package version](https://img.shields.io/github/package-json/v/froala/design-blocks.svg)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
-[![License: FOWDL v1.0](https://img.shields.io/badge/license-FOWDL-blue.svg)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
+[![GitHub package version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
 
 Extension to the Arduino IDE that automatically generates Arduino Classes.
 
-**Discuss it on [Product Hunt](https://www.producthunt.com/posts/froala-design-blocks-2-2) 🦄**
+
 
 <p><a href="https://www.froala.com/design-blocks/webpage-builder">Design Blocks Builder »</a></p>
 <p><a href="https://www.froala.com/wysiwyg-editor">WYSIWYG HTML Editor</a> · <a href="https://www.froala.com/pages">Pages</a> · <a href="https://www.froala.com/blog">Blog</a> · <a href="https://github.com/froala/design-blocks/archive/master.zip">Download</a></p>
