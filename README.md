@@ -1,7 +1,6 @@
-**Embedded Helper Beta Test*
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Try%20out%20the%20new%20Arduino%20Library%20Extension%20for%20the%20Arduino%20IDE%20by%20Embedded%20Helper&url=https://embeddedhelper.com/&hashtags=automation,InternetOfThings)
+# Embedded Helper Beta Test
 
-# &nbsp;[![Slack](https://img.shields.io/badge/Slack-2-lightgrey)](https://join.slack.com/t/embeddedhelper/shared_invite/zt-g8vjxeti-TmMyLruscyZziFPmT9DzJw)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Try%20out%20the%20new%20Arduino%20Library%20Extension%20for%20the%20Arduino%20IDE%20by%20Embedded%20Helper&url=https://embeddedhelper.com/&hashtags=automation,InternetOfThings) [![Slack](https://img.shields.io/badge/Slack-2-lightgrey)](https://join.slack.com/t/embeddedhelper/shared_invite/zt-g8vjxeti-TmMyLruscyZziFPmT9DzJw)
 
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/froala/design-blocks/blob/master/LICENSE)
 [![GitHub package version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
@@ -9,6 +8,11 @@
 Extension to the Arduino IDE that automatically generates Arduino Classes.
 
 
+
+
+
+
+## WILL ADD BELOW FEATURES
 
 <p><a href="https://www.froala.com/design-blocks/webpage-builder">Design Blocks Builder »</a></p>
 <p><a href="https://www.froala.com/wysiwyg-editor">WYSIWYG HTML Editor</a> · <a href="https://www.froala.com/pages">Pages</a> · <a href="https://www.froala.com/blog">Blog</a> · <a href="https://github.com/froala/design-blocks/archive/master.zip">Download</a></p>
