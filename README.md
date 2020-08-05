@@ -1,21 +1,10 @@
 # Embedded Helper Extension
+
  Demonstrates Creation of Arduino Tool to Automatically Generate Classes
 
  
 
 ## Installation
-
-### Step 0:
-
-If you haven't already, download the [Arduino IDE](https://www.arduino.cc/en/main/software)
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/86273966-fce03380-bb9e-11ea-9cb2-e6c6a19c102d.png)
-
-Then download both the "EmbeddedHelper.jar" and "arduinoclassmaker.jar" files
-
-
-![alt text](https://user-images.githubusercontent.com/62360986/87077916-d7cc7000-c1f1-11ea-8a92-d4e20446caa8.png)
 
 ### Step 1:
 
@@ -69,13 +58,13 @@ Now when you open Arduino, under the tools menu, there will be a "Generate class
 
   Go to tools menu and select Generate Class, using [this Morse file](https://github.com/jsmith2021Brandeis/EmbeddedHelperBetaTest/blob/master/examples/Morse/Morse.ino) in examples folder
 
-![Image of Morse Example file](images/Morse.PNG)
+![Image of Morse Example file](C:/Users/jsmit/Documents/ArduinoSketches/EmbeddedHelperBetaTest/images/Morse.PNG)
 
 Select Tools --> Generate Class, and select a folder location in your libraries directory so the class will compile
 
 ​	You will receive something like the following message
 
-​	![Output of Morse example](images/MorseOutput.PNG)
+​	![Output of Morse example](C:/Users/jsmit/Documents/ArduinoSketches/EmbeddedHelperBetaTest/images/MorseOutput.PNG)
 
 You can go to that location to view the generated classes!
 
