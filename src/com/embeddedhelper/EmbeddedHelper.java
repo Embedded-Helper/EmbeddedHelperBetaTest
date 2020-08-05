@@ -1,5 +1,10 @@
-//https://github.com/arduino/Arduino/blob/799879e8ae9f0cb76c7a76f4e945347b92d6352d/build/shared/tools/Mangler/src/Mangler.java
-
+/**Jacob Smith Embedded Helper 8/4/20
+ * A plugin for the Arduino IDE using the Embedded Helper Source Code
+ * (not included here but imported)
+ * Allows user to generate class, see an example, and see a reminder
+ * to fill out the beta test form
+ * 
+ */
 package com.embeddedhelper;
  
 import processing.app.Editor;
@@ -66,9 +71,6 @@ public class EmbeddedHelper implements Tool {
 				String contents = sketchInfo[1];
 				String parentPath = sketchInfo[3];
 
-				// give user the chance to provide a new className
-				// status.edit("Please enter name of class", sketchInfo[0]);
-				// try{Thread.sleep(5000);}catch(Exception e){}
 				// compile sketch to check for errors
 				editor.statusNotice(tr("Compiling sketch..."));
 				if (failedToCompile(editor, controller)) {
