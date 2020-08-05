@@ -6,7 +6,7 @@
  * 
  */
 package com.embeddedhelper;
- 
+
 import processing.app.Editor;
 import processing.app.tools.Tool;
 
@@ -16,42 +16,45 @@ import processing.app.EditorTab;
 import processing.app.SketchFile;
 import static processing.app.I18n.tr;
 
+import java.awt.Desktop;
+import java.awt.Font;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import cc.arduinoclassmaker.ArduinoClassContainer;
 import cc.arduinoclassmaker.SketchParser;
 import cc.arduinoclassmaker.otherClassFileMaker;
 
- 
 public class EmbeddedHelper implements Tool {
 	Editor editor;
 
+	public void init(Editor editor) {
+		this.editor = editor;
+	}
 
-  public void init(Editor editor) {
-    this.editor = editor;
-  }
+	public String getMenuTitle() {
+		return "Generate Class";
+	}
 
+	public void run() {
+		launchClassGenTool(editor.getSketchController(), editor.getCurrentTab(), editor.getCurrentTab().getSketchFile(),
+				editor.getTabs(), editor);
 
-  public String getMenuTitle() {
-    return "Generate Class";
-  }
- 
-
-  public void run() {
-    generateLibrary(editor.getSketchController(),editor.getCurrentTab(),editor.getCurrentTab().getSketchFile(),editor.getTabs(),editor);
-     
-  }
-
-
+	}
 
 	/**
 	 * Reads the file name and contents of the current sketch, and creates a body
 	 * file, header file, keywords, and example file
 	 */
-	public static void generateLibrary(SketchController controller, EditorTab tab, SketchFile sketchFile,
+	public static void launchClassGenTool(SketchController controller, EditorTab tab, SketchFile sketchFile,
 			List<EditorTab> tabs, Editor editor) {
 		// create private LibHandler Class so graphics will be updated
 		class LibHandler implements Runnable {
@@ -76,26 +79,181 @@ public class EmbeddedHelper implements Tool {
 				if (failedToCompile(editor, controller)) {
 					return;
 				}
-				// parse the sketch into format used to generate arduino classes
-				editor.statusNotice(tr("Creating Library Files..."));
-				SketchParser parser = new SketchParser(contents);
-				ArduinoClassContainer cont = parser.getContainer(className, false);
-				// create the files with strings
-				editor.statusNotice(tr("Creating Tabs..."));
-				createNewFile(parentPath,className +".cpp",cont.getBody());
-				createNewFile(parentPath,className+".h",cont.getHeader());
+				//show options dialogue
+				Object[] options = { "Convert this Sketch", "See an Example" };
+				int result = JOptionPane.showOptionDialog(editor, "Would you like to convert this program into a class or see an example?",
+						"Class Generator Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,
+						options[0]);
+				
+				boolean classGenerated=false;
+				if(result==0) {
+					//generate class option 0 
+					classGenerated=generateClass(editor, tab, sketchFile,controller);
+					
+					//wait for x seconds
+					try {
+						Thread.sleep(15000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					if(classGenerated) {
+						//display message to go to beta tets form in browser
+						String url="https://forms.gle/NBxefPFHbHeJVP2w8";
+				        Object[] testOptions = { "Yes, please \n(Will launch browser)", "No, thanks" };
+				        int testResult = JOptionPane.showOptionDialog(editor,
+				        		"Please consider filling out our beta test feedback form!","Class Generator Feedback Form",
+				                                                  JOptionPane.YES_NO_OPTION,
+				                                                  JOptionPane.QUESTION_MESSAGE,
+				                                                  null,
+				                                                  testOptions,
+				                                                  testOptions[0]);
+				        if (testResult == JOptionPane.YES_OPTION) {
+				        	if(!Desktop.isDesktopSupported()){
+					            Desktop desktop = Desktop.getDesktop();
+					            try {
+					                desktop.browse(new URI(url));
+					            } catch (IOException | URISyntaxException e) {
+					                // TODO Auto-generated catch block
+					                e.printStackTrace();
+					            }
+					        }else{
+					 
+								String msg = "<html><u>"+url+"</u></html>";
+						        /*JLabel urlLabel = new JLabel(msg);
+						        JPanel message = new JPanel();
+						        message.add(new JLabel("Please go to this link in your browser"));
+						        message.add(urlLabel);
+						        JOptionPane.showMessageDialog(null, message);
+						        
+						        JTextArea ta = new JTextArea(40, 90);
+				                ta.setText("");
+				                ta.setFont(new Font("Arial",Font.LAYOUT_LEFT_TO_RIGHT,18));
+				                ta.setWrapStyleWord(true);
+				                ta.setLineWrap(true);
+				                ta.setCaretPosition(0);
+				                ta.setEditable(false);
+				                JOptionPane.showMessageDialog(null, new JScrollPane(ta),"Class Generator Example", JOptionPane.INFORMATION_MESSAGE);
+				              
+				                
+				                JEditorPane content = new JEditorPane();
+				                content.setContentType("text/html");
+				                content.setEditable(false);
+				                content.setText("Please go to "+ msg+ "\nin your browser");
+				                
+				                JOptionPane.showMessageDialog(null, content,"Class Generator Feedback Form", JOptionPane.INFORMATION_MESSAGE);*/
+								
+								 JTextArea ta = new JTextArea(1, 42);
+					                ta.setText("Please go to \t"+ url+ "\t in your browser");
+					                ta.setFont(new Font("Arial",Font.LAYOUT_LEFT_TO_RIGHT,18));
+					                ta.setWrapStyleWord(true);
+					                ta.setLineWrap(true);
+					                ta.setCaretPosition(0);
+					                ta.setEditable(false);
+					                JOptionPane.showMessageDialog(null, new JScrollPane(ta),"Class Generator Example", JOptionPane.INFORMATION_MESSAGE);
+				                
+					        }
+				        }		
+					}
+							
+				}else if (result==1) {
+					
+					 JTextArea ta = new JTextArea(40, 90);
+		                ta.setText("This Sketch flashes a light on and off using Morse Code. \nCopy it into an Arduino Sketch"
+							    + "\nThen select tools--> Generate Class--> Convert This Sketch and \nchose a file location in your libraries folder\n\n"+morseExample);
+		                ta.setFont(new Font("Arial",Font.LAYOUT_LEFT_TO_RIGHT,18));
+		                ta.setWrapStyleWord(true);
+		                ta.setLineWrap(true);
+		                ta.setCaretPosition(0);
+		                ta.setEditable(false);
 
-				// create other class files that won't be opened in the IDE
-				otherClassFileMaker.createClassFiles(className, parentPath, cont.getExample(),cont.getKeywords());
-				//clear status
-				editor.statusNotice("The "+className+" Class was Generated!");
-				System.out.println("CLASSGEN: The class files were created, please close this window");
-				System.out.println("\t and go to "+parentPath+" to see them");
+		                JOptionPane.showMessageDialog(null, new JScrollPane(ta),"Class Generator Example", JOptionPane.INFORMATION_MESSAGE);
+					
+					//run example file option 1
+					///String selection = editor.getCurrentTab().getText();
+					//System.out.println(selection);
+					//editor.getCurrentTab().setText(morseExample);
+
+				}
+				
+				
+				
+				
+				//show beta test form
+				/*JOptionPane.showMessageDialog(editor,
+						"Please consider filling out our beta test feedback form!\n https://forms.gle/NBxefPFHbHeJVP2w8",
+						"Beta Test", JOptionPane.NO_OPTION);
+				
+				//wait for ten seconds
+				try {
+					Thread.sleep(15000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				//show beta test form with link
+				String url="https://forms.gle/NBxefPFHbHeJVP2w8";
+				String msg = "<html><u>"+url+"</u></html>";
+		        JLabel urlLabel = new JLabel(msg);
+		        JPanel message = new JPanel();
+		        message.add(new JLabel("Please consider filling out our beta test feedback form!"));
+		        message.add(urlLabel);
+
+		        JOptionPane.showMessageDialog(null, message);*/
+			
+		     
 			}
 
 		}
 		// see private handleRun method of Editor class, try line 1632
 		new Thread(new LibHandler()).start();
+	}
+	
+	/**
+	 * Converts the program into a generated class
+	 * @param editor Arduino object used to save file
+	 * @param tab Arduino Object used to get the contents of this tab
+	 * @param sketchFile Arduino Object used to get file name
+	 * @param controller Arduino object used to display error message
+	 * @return whether the class was generated
+	 */
+	private static boolean generateClass(Editor editor, EditorTab tab, SketchFile sketchFile, SketchController controller) {
+		
+		// save the library to the correct location, also gives user chance to name
+		// class
+		editor.handleSaveAs();
+		
+		// get the file name and contents of the sketch
+		String[] sketchInfo = getNameContentsPath(tab, sketchFile);
+		String className = sketchInfo[0];
+		String contents = sketchInfo[1];
+		String parentPath = sketchInfo[3];
+
+		// compile sketch to check for errors
+		editor.statusNotice(tr("Compiling sketch..."));
+		if (failedToCompile(editor, controller)) {
+			return false;
+		}
+		// parse the sketch into format used to generate arduino classes
+		editor.statusNotice(tr("Creating Library Files..."));
+		SketchParser parser = new SketchParser(contents);
+		ArduinoClassContainer cont = parser.getContainer(className, false);
+		// create the files with strings
+		editor.statusNotice(tr("Creating Tabs..."));
+		createNewFile(parentPath, className + ".cpp", cont.getBody());
+		createNewFile(parentPath, className + ".h", cont.getHeader());
+
+		// create other class files that won't be opened in the IDE
+		otherClassFileMaker.createClassFiles(className, parentPath, cont.getExample(), cont.getKeywords());
+		// clear status
+		editor.statusNotice("The " + className + " Class was Generated!");
+			
+		System.out.println("CLASSGEN: The class files were created, please close this window");
+		System.out.println("\t and go to " + parentPath + " to see them");
+		return true;
+	
 	}
 
 	/**
@@ -125,7 +283,7 @@ public class EmbeddedHelper implements Tool {
 	 * @return the name, contents, file path of the sketch, and file path of parent
 	 */
 	private static String[] getNameContentsPath(EditorTab currentTab, SketchFile sketchFile) {
-	  
+
 		// create array to return sketch information in
 		String[] sketchInfo = new String[4];
 		// load sketch file name
@@ -143,17 +301,18 @@ public class EmbeddedHelper implements Tool {
 
 	/**
 	 * Helper method to create a new file, used for the body and header files
+	 * 
 	 * @param parentPath the path the file will be created out
-	 * @param name the name of the new file
-	 * @param contents the contents of the new file
+	 * @param name       the name of the new file
+	 * @param contents   the contents of the new file
 	 */
 	private static void createNewFile(String parentPath, String name, String contents) {
-		//create the File using Java File class
+		// create the File using Java File class
 		File test = new File(parentPath, name);
-		FileWriter writer=null;
+		FileWriter writer = null;
 		try {
 			test.createNewFile();
-			//Populate the file with the contents string
+			// Populate the file with the contents string
 			writer = new FileWriter(test);
 			writer.write(contents);
 			writer.close();
@@ -162,41 +321,73 @@ public class EmbeddedHelper implements Tool {
 			e.printStackTrace();
 		}
 	}
-   
-    public static void main(String[] args) throws InterruptedException {
-    	//demonstrate the class's functionality by feeding it a sample file name and contents strnig
-    	String className="Blank";
-    	String contents="void setup() {"
-    		+"// put your setup code here, to run once:\n\n"
-    		+"}\n"
-    		+"void loop() {\n"
-    		+"// put your main code here, to run repeatedly:\n"
-    		+"}";
-    	
-    	//generate the classes from the sample file name and contents string
-    	SketchParser parser = new SketchParser(contents);
+
+	public static void main(String[] args) throws InterruptedException {
+		// demonstrate the class's functionality by feeding it a sample file name and
+		// contents strnig
+		String className = "Blank";
+		String contents = "void setup() {" + "// put your setup code here, to run once:\n\n" + "}\n" + "void loop() {\n"
+				+ "// put your main code here, to run repeatedly:\n" + "}";
+
+		// generate the classes from the sample file name and contents string
+		SketchParser parser = new SketchParser(contents);
 		ArduinoClassContainer cont = parser.getContainer(className, false);
-    	
-    	//print the created files
-    	System.out.println("NAME: " +className);
-    	System.out.println("ORIGINAL FILE:\n"+cont.getHeader());
-    	System.out.println("HEADER FILE:\n"+cont.getHeader());
-    	System.out.println("BODY FILE:\n"+cont.getBody());
-    	System.out.println("EXAMPLE FILE:"+cont.getExample());
-    	System.out.println("KEYWORDS FILE:\n"+cont.getKeywords());
-    		
-    	//launch the applications to rebuild and test the extension of the Arduino IDE
-    	Runtime.getRuntime().addShutdownHook(new Thread());
-    	try {
-    		//launch the terminal so I can recompile the .jar file
-			Runtime.getRuntime().exec("cmd /c start C:\\cygwin64\\Cygwin.bat \n l \n" );
+
+		// print the created files
+		System.out.println("NAME: " + className);
+		System.out.println("ORIGINAL FILE:\n" + cont.getHeader());
+		System.out.println("HEADER FILE:\n" + cont.getHeader());
+		System.out.println("BODY FILE:\n" + cont.getBody());
+		System.out.println("EXAMPLE FILE:" + cont.getExample());
+		System.out.println("KEYWORDS FILE:\n" + cont.getKeywords());
+
+		// launch the applications to rebuild and test the extension of the Arduino IDE
+		Runtime.getRuntime().addShutdownHook(new Thread());
+		try {
+			// launch the terminal so I can recompile the .jar file
+			Runtime.getRuntime().exec("cmd /c start C:\\cygwin64\\Cygwin.bat \n l \n");
 			Thread.sleep(7000);
-			//launch the Arduino IDE
+			// launch the Arduino IDE
 			Runtime.getRuntime().exec("cmd /c start C:\\\"Program Files (x86)\"\\Arduino\\arduino.exe");
-    	}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
-  
+	//stores the Morse example
+	private static String morseExample=
+	
+	 "/*Written by Jacob Smith for Brandeis University.\n"
+	 +"Allows arduino to cmmunicate with morse code*/\n\n"
+	 +"//the pin to flash on\n"
+	 +"int pin = 13;\n\n"
+	+"//runs once, sets up pins\n"
+	+"void setup(){\n"
+	+"  pinMode(pin, OUTPUT);\n"
+	+"}\n\n"
+	+"//runs many times, flashes a message\n"
+	+"void loop(){\n"
+	+"  dot(); dot(); dot();\n"
+	+"  dash(); dash(); dash();\n"
+	+"  dot(); dot(); dot();\n"
+	+"  //wait 3 seconds...\n"
+	+"  delay(3000);\n\n"
+	+"}\n\n"
+	+"//plays a dot on the pin\n"
+	+"void dot(){\n"
+	+"  digitalWrite(pin, HIGH);\n"
+	+"  //wait quarter second...\n"
+	+"  delay(250);\n"
+	+"  digitalWrite(pin, LOW);\n"
+	+"  delay(250);\n"
+	+"}\n\n"
+	+"//plays a dash on the pin\n"
+	+"void dash()\n"
+	+"{\n"
+	+" digitalWrite(pin, HIGH);\n"
+	+"  //wait one second...\n"
+	+"  delay(1000);\n"
+	+"  digitalWrite(pin, LOW);\n"
+	+"  delay(250);\n"
+	+"}\n\n";
 }
