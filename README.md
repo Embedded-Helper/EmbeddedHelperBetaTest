@@ -32,6 +32,7 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
   4. **Launch Arduino IDE** To see the extension
   
     Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
+    
     ![Showing installed extension](images/installedExtension.PNG)
  
    
