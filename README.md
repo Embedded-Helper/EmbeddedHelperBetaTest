@@ -8,55 +8,28 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
 
 <p><a href="http://embeddedhelper.com/">Embedded Helper Website (Web Demo Coming Soon) »</a></p>
 
-### Step 1:
-## Table of contents
-
-- [Quick start](#quick-start)
-- [Dependencies](#dependencies)
 
 ## Quick start
 
-1. **Download Froala Design Blocks.** There are several ways to start using the Froala Design Blocks depending on how you prefer:
+1. **Download Arduino IDE.** This is software comonly used to program Arduino Chips
 
-- [Use the builder](https://www.froala.com/design-blocks/webpage-builder)
+- [Download Link](https://www.arduino.cc/en/main/software)
 
-- [Download the latest release](https://github.com/froala/design-blocks/blob/master/froala-design-blocks.zip?raw=true) and then read the [What's included](#whats-included) section below.
+2. **Download Latest Release of this Project** In the form of two .jar files
+  [Download Link] (https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/tag/1.0.0)
+  
 
-- Clone the repo and run it.
-
-  ```bash
-  git clone https://github.com/froala/design-blocks.git
-  cd design-blocks
-  npm install
-  npm run start
-  ```
-
-2. **Design Blocks Skeleton.** You can use the following code layout as a starting point.
-
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <title>Froala Design Blocks - Skeleton</title>
-       <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-       <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-       <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/2.0.1/css/froala_blocks.min.css">
-     </head>
+3. **Add Jar Files to Arduino tools folder.** This installed the EmbeddedHelper Extension
+  in your Arduino home folder (`usually in Documents/Arduino`), create a new tools folder
+  in the tools folder, create folders in the pattern `tools/Embeddedhelper/tool/`
+  insert the downloaded files from step 2 in that final tool folder
+  
+  The result will look like this : (On Windows 10)
+  ![Image of folder structure](images/toolsDir.png)
+  
+  4. **Launch Arduino IDE** To see the extension
+  
+    Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
+    ![Showing installed extension](images/installedExtension.png)
+  
    
-     <body>
-         <!-- Insert HTML for contents. -->
-     </body>
-   </html>    
-   ```
-
-3. **Add design blocks.** Once you have the Froala Design Blocks basic HTML structure in place, start browsing the design blocks that you want to use and copy/paste the HTML for them.
-
-## Dependencies
-
-- **Bootstrap**. Froala Design Blocks is built on Bootstrap 4 library and fully supports it. It uses the Javascript files only for the header design blocks, so if you don't need them, we recommend not to include the Bootstrap JS files in order to reduce your bundle size.
-
-- **Font Awesome**. We're using the amazing Font Awesome library for the social network icons.
-
-- **Google Fonts**. By default, the Design Blocks toolkit is built using the Roboto font, however that can easily be changed to other fonts.
