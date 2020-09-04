@@ -27,11 +27,11 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
   insert the downloaded files from step 2 in that final tool folder
   
   The result will look like this : (On Windows 10)
-  ![Image of folder structure](images\toolsDir.png)
+  ![Image of folder structure](images/toolsDir.PNG)
   
   4. **Launch Arduino IDE** To see the extension
   
     Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
-    ![Showing installed extension](images\installedExtension.png)
-  
+    ![Showing installed extension](images/installedExtension.PNG)
+ 
    
