@@ -5,15 +5,8 @@
 [![GitHub package version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
 Extension to the Arduino IDE that automatically generates Arduino Classes.
 
+<p><a href="http://embeddedhelper.com/">Embedded Helper Website (Web Demo Coming Soon) »</a></p>
 
-
-
-## WILL ADD BELOW FEATURES
-
-<p><a href="https://www.froala.com/design-blocks/webpage-builder">Design Blocks Builder »</a></p>
-<p><a href="https://www.froala.com/wysiwyg-editor">WYSIWYG HTML Editor</a> · <a href="https://www.froala.com/pages">Pages</a> · <a href="https://www.froala.com/blog">Blog</a> · <a href="https://github.com/froala/design-blocks/archive/master.zip">Download</a></p>
-
-![Design Blocks](https://raw.githubusercontent.com/froala/design-blocks/master/design-blocks.jpg)
 =======
 ### Step 1:
 ## Table of contents
@@ -23,12 +16,7 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
 - [What's included?](#whats-included)
 - [Dependencies](#dependencies)
 - [Categories](#categories)
-- [Browser support](#browser-support)
-- [Community](#community)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Contributing guidelines](#contributing-guidelines)
-- [Contributors](#contributors)
-- [Copyright and license](#copyright-and-license)
+
 
 
 ## Quick start
@@ -133,98 +121,3 @@ We provide compiled CSS (`froala_blocks.css`), as well as compiled and minified 
 - Pricings - https://github.com/froala/design-blocks/blob/master/dist/pricings.html
 - Teams - https://github.com/froala/design-blocks/blob/master/dist/teams.html
 - Testimonials - https://github.com/froala/design-blocks/blob/master/dist/testimonials.html
-
-
-## Browser Support
-
-At the moment, we aim to support all major web browsers. Any issue in the browsers listed below should be reported as a bug:
-
-- Internet Explorer 10+
-- Microsoft Edge 14+
-- Safari 6+
-- Firefox (Current - 1) and Current versions
-- Chrome (Current - 1) and Current versions
-- Opera (Current - 1) and Current versions
-- Safari iOS 7.0+
-- Android 6.0+
-
-(Current - 1) and Current means that we support the current stable version of the browser and the version that precedes it.
-
-
-
-## Bugs and feature requests
-
-Have a bug or a feature request? Please first read the issue guidelines and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/froala/design-blocks/issues/new).
-
-
-
-## Community
-
-Get updates on Froala Design Blocks' development and chat with the project maintainers and community members:
-
-- Follow [@froala on Twitter](https://twitter.com/froala)
-- Read and subscribe to [The Official Froala Blog](https://www.froala.com/blog)
-- Check the [Official Website](https://www.froala.com/design-blocks)
-- Join us [on Facebook](https://www.facebook.com/froala/)
-- [Google+](https://plus.google.com/+Froala/)
-- [Pinterest](https://pinterest.com/froala/)
-
-
-
-## Contributing guidelines
-
-All contributions are more than welcomed. Contributions may close an issue, fix a bug (reported or not reported), add new design blocks, improve the existing code, add new feature, and so on. In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation. [Read the full Code of Conduct](https://github.com/froala/design-blocks/blob/dev/CODE_OF_CONDUCT.md).
-
-The `dev` branch is the default and base branch for the project. It is used for development and all Pull Requests should go there. Please make sure not to commit the `dist` folder in the `dev` branch.
-
-#### Development
-
-The project needs to be compiled, therefore the files in the `src` folder are those we'll be developing on. Don't make changes in the `dist` or `demo` folders as they will be overwritten when `src` is compiled.
-
-1. Get code
-
-```bash
-git clone git@github.com:froala/design-blocks.git
-cd design-blocks
-```
-
-2. Install dependencies and run project
-
-```bash
-npm install
-npm run start
-```
-
-With the gulp server running, the project is available at the following address [localhost:8001](http://localhost:8001/). The `src` files are automatically compiled when changes have been made.
-
-#### Versioning
-
-Through the development of new versions, we're going use the Semantic Versioning: https://docs.npmjs.com/getting-started/semantic-versioning. Example: 1.0.0.
-
-- Major release: increment the first digit and reset middle and last digits to zero. Introduces major changes that might break backward compatibility. E.g. 2.0.0
-- Minor release: increment the middle digit and reset last digit to zero. It would fix bugs and also add new features without breaking backward compatibility. E.g. 1.1.0
-- Patch release: increment the third digit. It would fix bugs and keep backward compatibility. E.g. 1.0.1
-
-
-
-## Contributors
-
-Special thanks to everyone who contributed to getting the Froala Design Blocks to the current state.  🙏
-
-- [Creative Tim](https://www.creative-tim.com/) ❤️ - design blocks PSDs, help with typography and SVGs for shapes
-- [Reaction](https://reaction.ca) - design blocks Sketches:
-- [m5o](https://github.com/m5o) - help with update to Bootstrap 4
-- [Pexels](https://www.pexels.com/) - photos
-- [Undraw](https://undraw.co/) - illustrations
-- [FeatherIcons](https://feathericons.com/) - icons
-
-## Copyright and License
-
-Code and documentation copyright 2018 [Froala Labs](https://www.froala.com/). Code released under the [Froala Open Web Design License](https://github.com/froala/design-blocks/blob/master/LICENSE).
-
-Graphics license:
-
-  - shapes: free to use by [Creative Tim](https://www.creative-tim.com/)
-  - photos: free under the creative license from [Pexels](https://www.pexels.com/photo-license/)
-  - illustrations: free under the creative license from [Undraw](https://undraw.co/license)
-  - icons: free under MIT license [FeatherIcons](
