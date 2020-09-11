@@ -13,11 +13,11 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
 
 1. **Download Arduino IDE.** This is software comonly used to program Arduino Chips
 
-  [Download Link](https://www.arduino.cc/en/main/software)
+      [Download Link](https://www.arduino.cc/en/main/software)
 
 2. **Download Latest Release of this Project** In the form of two .jar files
 
-  [Download Link](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/tag/1.0.0)
+      [Download Link](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/tag/1.0.0)
   
 
 3. **Add Jar Files to Arduino tools folder.** This installed the EmbeddedHelper Extension
