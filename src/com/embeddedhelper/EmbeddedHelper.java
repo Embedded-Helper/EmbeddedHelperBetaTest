@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -91,9 +92,9 @@ public class EmbeddedHelper implements Tool {
 								"Class Generator Feedback Form", JOptionPane.YES_NO_OPTION,
 								JOptionPane.QUESTION_MESSAGE, null, testOptions, testOptions[0]);
 
-						//show beta test  form in browser or at least a link to it
+						// show beta test form in browser or at least a link to it
 						if (testResult == JOptionPane.YES_OPTION) {
-							//launch beta test form in browser
+							// launch beta test form in browser
 							try {
 								Desktop desktop = Desktop.getDesktop();
 								desktop.browse(new URI(url));
@@ -113,9 +114,9 @@ public class EmbeddedHelper implements Tool {
 						}
 					}
 
-				// show example sketch
+					// show example sketch
 				} else if (result == 1) {
-						
+
 					JTextArea ta = new JTextArea(40, 90);
 					ta.setText(
 							"This Sketch flashes a light on and off using Morse Code. \nCopy it into an Arduino Sketch"
@@ -126,9 +127,13 @@ public class EmbeddedHelper implements Tool {
 					ta.setLineWrap(true);
 					ta.setCaretPosition(0);
 					ta.setEditable(false);
+					ta.setSize(10, 10);
 
-					JOptionPane.showMessageDialog(null, new JScrollPane(ta), "Class Generator Example",
-							JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane optionPane = new JOptionPane(new JScrollPane(ta), JOptionPane.INFORMATION_MESSAGE);
+					JDialog dialog = optionPane.createDialog("Class Generator Example");
+					dialog.setResizable(true);
+					dialog.setVisible(true);
+
 				}
 			}
 		}
@@ -285,14 +290,15 @@ public class EmbeddedHelper implements Tool {
 	// stores the Morse example
 	private static String morseExample =
 
-			"/*Written by Jacob Smith for Brandeis University.\n" + "Allows arduino to cmmunicate with morse code*/\n\n"
-					+ "//the pin to flash on\n" + "int pin = 13;\n\n" + "//runs once, sets up pins\n"
-					+ "void setup(){\n" + "  pinMode(pin, OUTPUT);\n" + "}\n\n"
-					+ "//runs many times, flashes a message\n" + "void loop(){\n" + "  dot(); dot(); dot();\n"
-					+ "  dash(); dash(); dash();\n" + "  dot(); dot(); dot();\n" + "  //wait 3 seconds...\n"
-					+ "  delay(3000);\n\n" + "}\n\n" + "//plays a dot on the pin\n" + "void dot(){\n"
-					+ "  digitalWrite(pin, HIGH);\n" + "  //wait quarter second...\n" + "  delay(250);\n"
-					+ "  digitalWrite(pin, LOW);\n" + "  delay(250);\n" + "}\n\n" + "//plays a dash on the pin\n"
-					+ "void dash()\n" + "{\n" + " digitalWrite(pin, HIGH);\n" + "  //wait one second...\n"
-					+ "  delay(1000);\n" + "  digitalWrite(pin, LOW);\n" + "  delay(250);\n" + "}\n\n";
+			"/*Written by Jacob Smith for Brandeis University.\n"
+					+ "Allows arduino to communicate with morse code*/\n\n" + "//the pin to flash on\n"
+					+ "int pin = 13;\n\n" + "//runs once, sets up pins\n" + "void setup(){\n"
+					+ "  pinMode(pin, OUTPUT);\n" + "}\n\n" + "//runs many times, flashes a message\n"
+					+ "void loop(){\n" + "  dot(); dot(); dot();\n" + "  dash(); dash(); dash();\n"
+					+ "  dot(); dot(); dot();\n" + "  //wait 3 seconds...\n" + "  delay(3000);\n\n" + "}\n\n"
+					+ "//plays a dot on the pin\n" + "void dot(){\n" + "  digitalWrite(pin, HIGH);\n"
+					+ "  //wait quarter second...\n" + "  delay(250);\n" + "  digitalWrite(pin, LOW);\n"
+					+ "  delay(250);\n" + "}\n\n" + "//plays a dash on the pin\n" + "void dash()\n" + "{\n"
+					+ " digitalWrite(pin, HIGH);\n" + "  //wait one second...\n" + "  delay(1000);\n"
+					+ "  digitalWrite(pin, LOW);\n" + "  delay(250);\n" + "}\n\n";
 }
