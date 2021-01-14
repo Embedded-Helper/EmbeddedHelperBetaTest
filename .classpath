@@ -8,6 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Arduino/lib/arduino-core.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Arduino/lib/pde.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jsmit/Documents/ArduinoSketches/EmbeddedHelperBetaTest/dependencies/arduinoclassmaker.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jsmit/Documents/ArduinoSketches/EmbeddedHelper/dependencies/arduinoclassmaker.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
