@@ -17,7 +17,7 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
 
 2. **Download Latest Release of this Project** In the form of two .jar files
 
-      [Download Link](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/tag/1.0.0)
+      [Download Link](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/latest)
   
 
 3. **Add Jar Files to Arduino tools folder.** This installed the EmbeddedHelper Extension
@@ -34,5 +34,7 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
    Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class
     
    ![Showing installed extension](images/installedExtension.PNG)
+   
+   [And please fill out our beta test feedback form to share your thoughts!](https://forms.gle/oQyqJfXD3KEXB9Zq7)
  
    
