@@ -35,6 +35,6 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
     
    ![Showing installed extension](images/installedExtension.PNG)
    
-   [And please fill out our beta test feedback form to share your thoughts!](https://forms.gle/oQyqJfXD3KEXB9Zq7)
+   **[And please fill out our beta test feedback form to share your thoughts!](https://forms.gle/oQyqJfXD3KEXB9Zq7)**
  
    
