@@ -20,15 +20,14 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
       [Download Link](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/latest)
   
 
-3. **Add Jar Files to Arduino tools folder.** Sets on how to install the EmbeddedHelper Extension
+3. **Add Jar Files to Arduino tools folder.** How to install the EmbeddedHelper Extension
 
-  In your Arduino installation folder (`usually in Program Files (x86)/Arduino`), create a new tools folder
-  in the tools folder called `EmbeddedHelper`, then make another folder in it called `tool`; the folders should look like `tools/Embeddedhelper/tool/`. Copy the downloaded files from step 2 in that final tool folder
+  In your Arduino installation folder (usually in `Program Files (x86)/Arduino`), create a folder called `EmbeddedHelper` in the tools folder, then another folder in `EmbeddedHelper` called `tool`; the folders should look like `Arduino/tools/Embeddedhelper/tool/`. Copy the downloaded files from step 2 into the final `tool` folder
   
   The result will look similar to this (On Windows 10):
       ![Image of folder structure](images/toolsDir.PNG)
   
 4. **Launch Arduino IDE** Start using EmbeddedHelper
   
-  Launch the Arduino IDE, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
+  Launch Arduino IDE, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
       ![Showing installed extension](images/installedExtension.PNG)
