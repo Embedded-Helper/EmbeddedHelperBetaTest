@@ -2,7 +2,7 @@
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Try%20out%20the%20new%20Arduino%20Library%20Extension%20for%20the%20Arduino%20IDE%20by%20Embedded%20Helper&url=https://embeddedhelper.com/&hashtags=automation,InternetOfThings) [![Slack](https://img.shields.io/badge/Slack-2-lightgrey)](https://join.slack.com/t/embeddedhelper/shared_invite/zt-g8vjxeti-TmMyLruscyZziFPmT9DzJw)
 
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/froala/design-blocks/blob/master/LICENSE)
-[![GitHub package version](https://img.shields.io/badge/version-v1.0.3-blue)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
+[![GitHub package version](https://img.shields.io/badge/version-v1.0.0-blue)](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest)
 
 Extension to the Arduino IDE that automatically generates Arduino Classes.
 
@@ -22,7 +22,7 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
 
 3. **Add Jar Files to Arduino tools folder.** How to install the EmbeddedHelper Extension
 
-  In your Arduino installation folder (usually in `Program Files (x86)/Arduino`), create a folder called `EmbeddedHelper` in the tools folder, then another folder in `EmbeddedHelper` called `tool`; the folders should look like `Arduino/tools/Embeddedhelper/tool/`. Copy the downloaded files from step 2 into the final `tool` folder
+  In your Arduino installation folder (usually in `Program Files (x86)/Arduino` or `Documents`), create a folder called `EmbeddedHelper` in the tools folder, then another folder in `EmbeddedHelper` called `tool`; the folders should look like `Arduino/tools/Embeddedhelper/tool/`. Copy the downloaded files from step 2 into the final `tool` folder
   
   The result will look similar to this (On Windows 10):
       ![Image of folder structure](images/toolsDir.PNG)
@@ -31,3 +31,8 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
   
   Launch Arduino IDE, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
       ![Showing installed extension](images/installedExtension.PNG)
+   Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class
+    
+   ![Showing installed extension](images/installedExtension.PNG)
+   
+   **[And please fill out our beta test feedback form to share your thoughts!](https://forms.gle/oQyqJfXD3KEXB9Zq7)**
