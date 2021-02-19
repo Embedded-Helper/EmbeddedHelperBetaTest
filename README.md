@@ -26,47 +26,13 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
   
   The result will look similar to this (On Windows 10):
       ![Image of folder structure](images/toolsDir.PNG)
-      
-4. **Launch Arduino IDE** To see the extension
-
+  
+4. **Launch Arduino IDE** Start using EmbeddedHelper
+  
+  Launch Arduino IDE, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class`
+      ![Showing installed extension](images/installedExtension.PNG)
    Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class
     
    ![Showing installed extension](images/installedExtension.PNG)
-
+   
    **[And please fill out our beta test feedback form to share your thoughts!](https://forms.gle/oQyqJfXD3KEXB9Zq7)**
-
-
-## Examples
-
-​	Please see the Examples folder for example Arduino Sketches to convert to libraries
-
-## Special Features
-
-The tool also includes special features designed to make writing Arduino libraries more efficient
-
-#### Input author, organization, and supported boards
-
-- Type Author, Organization, and Boards Supported in this format in your sketch header comment
-- ![Timer Example Header Comment](images/TimerHeaderComment.PNG)
-- And the relevant fields will be added to your generated library.properties file
-- ![Timer Library Properties](images/TimerLibraryProperties.PNG)
-- and the header comment will be reformatted in your generated header, body, and example files
-
-- ![Timer Example Header Comment](images/TimerExampleHeaderComment.PNG)
-
-- If you specified supported boards, your library will only compile if those boards are used, see the generated .cpp file and .h file
-
-- Generate class using the Timer example in the examples folder to see these features demonstrated!
-
-  #### Publishing Library to Arduino Library Manager
-
-  This tool makes it easy to publish your library to the [Arduino Library Manager](https://github.com/arduino/Arduino/wiki/Library-Manager-FAQ)
-
-  1. Make sure your library compiles
-  2.  Delete the .development folder, this allows you to modify the example file while writing the library but is not allowed in a library submission
-  3. Update the fields in the library.properties file with a sentence describing the library and other relevant fields
-  4. Create a github repository for your library
-  5. "[Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) it and push the tag (or create a release if you web hosting offers a way to do it, for example with [GitHub "releases"](https://help.github.com/articles/creating-releases/))
-  6. Open an issue on [Arduino's GitHub](https://github.com/arduino/Arduino/issues), specifying the URL of the repository from where to download your library. If you have multiple libraries to submit you are welcome to do them all in a single issue." From [Library Manager FAQ](https://github.com/arduino/Arduino/wiki/Library-Manager-FAQ)
-
- 
