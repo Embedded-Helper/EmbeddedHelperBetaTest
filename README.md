@@ -11,7 +11,7 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
 
 ## Quick start
 
-1. **Download Arduino IDE.** This is software comonly used to program Arduino Chips
+1. **Download Arduino IDE.** This is software commonly used to program Arduino and other similar chips
 
       [Download Link](https://www.arduino.cc/en/main/software)
 
@@ -20,16 +20,14 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
       [Download Link](https://github.com/Embedded-Helper/EmbeddedHelperBetaTest/releases/latest)
 
 
-3. **Add Jar Files to Arduino tools folder.** This installed the EmbeddedHelper Extension
+3. **Add Jar Files to Arduino tools folder.** How to install the EmbeddedHelper Extension
 
-  In your Arduino home folder (`usually in Documents/Arduino`), create a new tools folder
-  in the tools folder, create folders in the pattern `tools/Embeddedhelper/tool/`
-  insert the downloaded files from step 2 in that final tool folder
-
-  The result will look like this : (On Windows 10)
-  ![Image of folder structure](images/toolsDir.PNG)
-
-  4. **Launch Arduino IDE** To see the extension
+  In your Arduino installation folder (usually in `Program Files (x86)/Arduino` or `Documents`), create a folder called `EmbeddedHelper` in the tools folder, then another folder in `EmbeddedHelper` called `tool`; the folders should look like `Arduino/tools/Embeddedhelper/tool/`. Copy the downloaded files from step 2 into the final `tool` folder
+  
+  The result will look similar to this (On Windows 10):
+      ![Image of folder structure](images/toolsDir.PNG)
+      
+4. **Launch Arduino IDE** To see the extension
 
    Now launch the Arduino Software, and the Embedded Helper tool will show up in the `Tools` menu as `Generate Class
     
@@ -38,12 +36,9 @@ Extension to the Arduino IDE that automatically generates Arduino Classes.
    **[And please fill out our beta test feedback form to share your thoughts!](https://forms.gle/oQyqJfXD3KEXB9Zq7)**
 
 
-
-### Examples
+## Examples
 
 ​	Please see the Examples folder for example Arduino Sketches to convert to libraries
-
-
 
 ## Special Features
 
@@ -73,3 +68,5 @@ The tool also includes special features designed to make writing Arduino librari
   4. Create a github repository for your library
   5. "[Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) it and push the tag (or create a release if you web hosting offers a way to do it, for example with [GitHub "releases"](https://help.github.com/articles/creating-releases/))
   6. Open an issue on [Arduino's GitHub](https://github.com/arduino/Arduino/issues), specifying the URL of the repository from where to download your library. If you have multiple libraries to submit you are welcome to do them all in a single issue." From [Library Manager FAQ](https://github.com/arduino/Arduino/wiki/Library-Manager-FAQ)
+
+ 
