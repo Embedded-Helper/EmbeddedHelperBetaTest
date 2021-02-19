@@ -47,12 +47,12 @@ The tool also includes special features designed to make writing Arduino librari
 #### Input author, organization, and supported boards
 
 - Type Author, Organization, and Boards Supported in this format in your sketch header comment
-- ![Timer Example Header Comment](images\TimerHeaderComment.PNG)
+- ![Timer Example Header Comment](images/TimerHeaderComment.PNG)
 - And the relevant fields will be added to your generated library.properties file
-- ![Timer Library Properties](images\TimerLibraryProperties.PNG)
+- ![Timer Library Properties](images/TimerLibraryProperties.PNG)
 - and the header comment will be reformatted in your generated header, body, and example files
 
-- ![Timer Example Header Comment](images\TimerExampleHeaderComment.PNG)
+- ![Timer Example Header Comment](images/TimerExampleHeaderComment.PNG)
 
 - If you specified supported boards, your library will only compile if those boards are used, see the generated .cpp file and .h file
 
