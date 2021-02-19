@@ -72,6 +72,8 @@ public class EmbeddedHelper implements Tool {
 				Object[] options = { "Convert this Sketch", "Rewrite Library from Example", "See an Example" };
 				int result = JOptionPane.showOptionDialog(editor,
 						"Would you like to convert this program into a class, rewrite existing library, or see an example?",
+						"Class Generator Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,
+						options[0]);
 
 				boolean classGenerated = false;
 				if (result == 0) {
@@ -93,6 +95,7 @@ public class EmbeddedHelper implements Tool {
 								"Please consider filling out our beta test feedback form!",
 								"Class Generator Feedback Form", JOptionPane.YES_NO_OPTION,
 								JOptionPane.QUESTION_MESSAGE, null, testOptions, testOptions[0]);
+
 						// show beta test form in browser or at least a link to it
 						if (testResult == JOptionPane.YES_OPTION) {
 							// launch beta test form in browser
@@ -101,8 +104,8 @@ public class EmbeddedHelper implements Tool {
 								desktop.browse(new URI(url));
 								// if can't launch in browser, just display message with link
 							} catch (Exception e) {
-								JTextArea ta = new JTextArea(1, 42);r
-								ta.setText("Please go to \t" + url + "\t in your browser");
+								JTextArea ta = new JTextArea(1, 42);
+								ta.setText("Please go to following location in your file explorer\n\t" + url);
 								ta.setFont(new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, 18));
 								ta.setWrapStyleWord(true);
 								ta.setLineWrap(true);
@@ -118,10 +121,9 @@ public class EmbeddedHelper implements Tool {
 					// rewrite existing class option 1
 					classGenerated = rewriteClass(editor, tab, sketchFile, controller);
 
+					// show example sketch
+				} else if (result == 2) {
 
-				// show example sketch
-				} else if (result == 1) {
-						
 					JTextArea ta = new JTextArea(40, 90);
 					ta.setText(
 							"This Sketch flashes a light on and off using Morse Code. \nCopy it into an Arduino Sketch"
@@ -139,8 +141,6 @@ public class EmbeddedHelper implements Tool {
 					dialog.setResizable(true);
 					dialog.setVisible(true);
 
-					JOptionPane.showMessageDialog(null, new JScrollPane(ta), "Class Generator Example",
-							JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		}
@@ -347,7 +347,7 @@ public class EmbeddedHelper implements Tool {
 		createNewFile(parentPath, className + ".h", cont.getHeader());
 
 		// create other class files that won't be opened in the IDE
-		otherClassFileMaker.createClassFiles(className, parentPath, cont.getExample(), cont.getKeywords());
+		otherClassFileMaker.createClassFiles(className, parentPath, cont.getExample(), cont.getKeywords(),parser.getOptionalFields());
 		// clear status
 		editor.statusNotice("The " + className + " Class was Generated!");
 
